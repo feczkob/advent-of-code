@@ -8,7 +8,7 @@ fun main() {
     // Task 1
     val numOfCubes = Draw(mutableMapOf(Color.RED to 12, Color.GREEN to 13, Color.BLUE to 14))
     val value = readInGames()
-        .filter { it.possible(numOfCubes) }
+        .filter { it.isPossible(numOfCubes) }
         .sumOf { it.id }
     println("Sum of Ids of all possible games: $value")
     // 2545

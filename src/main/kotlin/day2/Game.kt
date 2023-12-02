@@ -5,7 +5,7 @@ class Game(
     private val draws: List<Draw>
 ) {
 
-    fun possible(reference: Draw) =
+    fun isPossible(reference: Draw) =
         draws.all { draw -> draw.possible(reference) }
 
     /**
