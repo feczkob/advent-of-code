@@ -6,7 +6,7 @@ class Game(
 ) {
 
     fun isPossible(reference: Draw) =
-        draws.all { draw -> draw.possible(reference) }
+        draws.all { draw -> draw.isPossible(reference) }
 
     /**
      * Returns the number of cubes of the given color in the game with the highest number of cubes of that color.

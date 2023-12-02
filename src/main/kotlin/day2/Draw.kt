@@ -5,7 +5,7 @@ class Draw(
 ) {
     operator fun get(color: Color): Int = cubes[color] ?: 0
 
-    fun possible(reference: Draw): Boolean {
+    fun isPossible(reference: Draw): Boolean {
         return cubes.all { (color, count) ->
             reference[color] >= count
         }
