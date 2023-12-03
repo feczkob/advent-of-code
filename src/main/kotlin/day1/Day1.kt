@@ -5,14 +5,16 @@ import readFileAsLines
 private const val FILENAME = "./src/main/resources/day1/day1.txt"
 
 fun main() {
+    val lines = readFileAsLines(FILENAME)
+
     // Task 1
-    val value = readFileAsLines(FILENAME)
+    val value = lines
         .map { "${it.firstDigitOfNumber().value}${it.lastDigitOfNumber().value}" }.sumOf { it.toInt() }
     println("Sum of all calibration numbers: $value")
     // 54390
 
     // Task 2
-    val value2 = readFileAsLines(FILENAME)
+    val value2 = lines
         .map { line ->
             val firstLetterDigit = line.firstDigitOfLetters()
             val lastLetterDigit = line.lastDigitOfLetters()
