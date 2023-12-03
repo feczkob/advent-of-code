@@ -1,10 +1,15 @@
 package day3
+
+private const val AST = '*'
+
 class Symbol(
     val value: Char,
     private val position: Position
 ) {
 
-    lateinit var neighbors : List<Number>
+    lateinit var neighbors: List<Number>
+
+    val isAst get() = value == AST
 
     override fun toString() = "Symbol(value=$value, position=$position)"
 

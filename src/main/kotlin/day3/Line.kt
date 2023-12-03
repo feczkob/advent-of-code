@@ -1,7 +1,5 @@
 package day3
 
-private const val AST = '*'
-
 class Line(
     private val lineLength: Int,
     val numbers: List<Number>,
@@ -13,7 +11,7 @@ class Line(
             .sumOf { it.value }
 
     fun sumOfGearRatios(upperNumbers: List<Number>, lowerNumbers: List<Number>) =
-        symbols.filter { it.value == AST }
+        symbols.filter { it.isAst }
             .filter { it.hasExactlyTwoNeighbors(upperNumbers + numbers + lowerNumbers, lineLength) }
             .sumOf {
                 it.neighbors
