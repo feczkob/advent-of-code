@@ -1,6 +1,6 @@
 package day2
 
-import readFileAsLinesUsingReadLines
+import readFileAsLines
 
 private const val FILENAME = "./src/main/resources/day2/day2.txt"
 
@@ -22,7 +22,7 @@ fun main() {
 }
 
 fun readInGames(): List<Game> =
-    readFileAsLinesUsingReadLines(FILENAME)
+    readFileAsLines(FILENAME)
         .map { line ->
             val gameId = line.substringAfter("Game ").substringBefore(":").toInt()
             line.substringAfter(": ").split("; ").map { draw ->
