@@ -6,8 +6,9 @@ import kotlin.math.pow
 private const val FILENAME = "./src/main/resources/day4/day4.txt"
 
 fun main() {
-    // Task 1
     val cards = readInCards()
+
+    // Task 1
     val value = cards
         .map { (w, m) ->
             m.count { it in w }
