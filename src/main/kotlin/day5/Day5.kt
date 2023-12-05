@@ -41,8 +41,8 @@ fun main() {
         .map { it.first..<it.first + it.second }
 
     // Would be way too slow
-//    val location = seeds2
-//        .mapNotNull { range -> range.minOfOrNull { chainedMapping[it] } }
+//    val location = seedsAsRanges
+//        .mapNotNull { range -> range.minOfOrNull { chainedMapping.reversedGet(it) } }
 //        .min()
 
     var seedNumber : Long
@@ -55,7 +55,7 @@ fun main() {
         location++
     }
 
-    println("Lowest location number with ranges: $location")
+    println("Lowest location number with seed ranges: $location")
     // 15880236
 }
 
