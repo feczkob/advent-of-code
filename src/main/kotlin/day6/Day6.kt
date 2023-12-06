@@ -20,6 +20,7 @@ fun main() = runBlocking {
             .count { (time.toInt() - it) * it > distances[index].toInt() }
     }.reduce(Int::times)
     println("Number of ways to beat the record: $value")
+    // 1660968
 
     // Task 2
     val value2 = times.reduce(String::plus).toLong()
