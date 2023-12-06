@@ -2,7 +2,7 @@ package day1
 
 import readFileAsLines
 
-private const val FILENAME = "./src/main/resources/day1/day1.txt"
+private const val FILENAME = "./src/main/resources/real/day1.txt"
 
 fun main() {
     val lines = readFileAsLines(FILENAME)

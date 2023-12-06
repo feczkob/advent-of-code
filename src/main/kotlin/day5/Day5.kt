@@ -2,7 +2,7 @@ package day5
 
 import readFileAsText
 
-private const val FILENAME = "./src/main/resources/day5/day5.txt"
+private const val FILENAME = "./src/main/resources/real/day5.txt"
 
 fun main() {
     val input = readFileAsText(FILENAME)

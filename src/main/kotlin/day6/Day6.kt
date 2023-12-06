@@ -5,7 +5,7 @@ import kotlinx.coroutines.runBlocking
 import readFileAsText
 
 
-private const val FILENAME = "./src/main/resources/day6/day6.txt"
+private const val FILENAME = "./src/main/resources/real/day6.txt"
 fun main() = runBlocking {
     val (times, distances) = readFileAsText(FILENAME)
         .split("\n")

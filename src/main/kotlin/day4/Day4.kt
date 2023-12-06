@@ -3,7 +3,7 @@ package day4
 import readFileAsLines
 import kotlin.math.pow
 
-private const val FILENAME = "./src/main/resources/day4/day4.txt"
+private const val FILENAME = "./src/main/resources/real/day4.txt"
 
 fun main() {
     val cards = readInCards()
