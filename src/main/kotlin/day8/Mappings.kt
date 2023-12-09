@@ -8,7 +8,7 @@ abstract class Mappings(
 
     protected lateinit var currentNodes: MutableList<String>
 
-    protected val instruction: Instruction
+    protected var instruction: Instruction
 
     init {
         instruction = Instruction(input.split("\n").first())
@@ -20,12 +20,12 @@ abstract class Mappings(
         }
     }
 
-    abstract fun get(predicate: String.() -> Boolean): Long
+    abstract operator fun get(predicate: String.() -> Boolean): Long
 
     protected fun step(nodeNumber: Int = 0) =
         values[currentNodes[nodeNumber]]?.let {
             currentNodes[nodeNumber] = if (instruction.current == Direction.LEFT) it.first else it.second
-            instruction.next()
+            instruction++
         } ?: throw Exception("No mapping found for ${currentNodes[nodeNumber]}")
 
 
@@ -41,7 +41,7 @@ class MappingsPart1(
         currentNodes = mutableListOf("AAA")
     }
 
-    override fun get(predicate: String.() -> Boolean): Long {
+    override operator fun get(predicate: String.() -> Boolean): Long {
         var counter: Long = 0
         while (currentNodes[0].predicate()) {
             step()
@@ -61,7 +61,7 @@ class MappingsPart2(
             .toMutableList()
     }
 
-    override fun get(predicate: String.() -> Boolean): Long {
+    override operator fun get(predicate: String.() -> Boolean): Long {
         val counterArray = LongArray(currentNodes.size) { 0 }
         currentNodes.forEachIndexed { index, _ ->
             var counter: Long = 0

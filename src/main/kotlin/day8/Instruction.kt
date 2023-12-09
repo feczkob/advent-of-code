@@ -17,9 +17,11 @@ class Instruction(
         }
     }
 
-    fun next() {
+    operator fun inc(): Instruction {
         currentDirection = (currentDirection + 1) % values.size
+        return this
     }
+
 
     fun reset() {
         currentDirection = 0
