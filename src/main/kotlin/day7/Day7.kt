@@ -15,13 +15,6 @@ fun main() {
                     )
                 }
         }
-
-    // Task 1
-    val value = hands.sortedDescending().reversed()
-        .mapIndexed { index, hand -> (index + 1) * hand.bid }
-        .reduce(Int::plus)
-    println("Total winning value: $value")
-
     val hands2 = readFileAsLines(FILENAME)
         .map { line ->
             line.split(" ")
@@ -33,6 +26,13 @@ fun main() {
                     )
                 }
         }
+
+    // Task 1
+    val value = hands.sortedDescending().reversed()
+        .mapIndexed { index, hand -> (index + 1) * hand.bid }
+        .reduce(Int::plus)
+    println("Total winning value: $value")
+    // 248217452
 
     // Task 2
     val value2 = hands2.sortedDescending().reversed()
