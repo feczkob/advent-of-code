@@ -15,14 +15,14 @@ class History(
     }
 
     fun calculatePrediction(): Int {
-        if(values.all { it == 0 })  return 0
+        if(values.distinct().size == 1) return values.first()
 
         val differences = History(values.zipWithNext { a, b -> b - a }.toList())
         return values.last() + differences.calculatePrediction()
     }
 
     fun calculateBackwards(): Int {
-        if(values.all { it == 0 })  return 0
+        if(values.distinct().size == 1) return values.first()
 
         val differences = History(values.zipWithNext { a, b -> b - a }.toList())
         return values.first() - differences.calculateBackwards()

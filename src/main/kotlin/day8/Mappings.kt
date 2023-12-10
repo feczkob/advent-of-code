@@ -1,5 +1,7 @@
 package day8
 
+import common.leastCommonMultiple
+
 abstract class Mappings(
     input: String,
 ) {
@@ -72,6 +74,6 @@ class MappingsPart2(
             counterArray[index] = counter
             instruction.reset()
         }
-        return findLCMOfListOfNumbers(counterArray.toList())
+        return counterArray.reduce(::leastCommonMultiple)
     }
 }

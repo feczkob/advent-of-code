@@ -2,7 +2,7 @@ package day6
 
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
-import readFileAsText
+import common.readFileAsText
 
 
 private const val FILENAME = "./src/main/resources/real/day6.txt"

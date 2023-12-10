@@ -1,6 +1,6 @@
 package day3
 
-import readFileAsLines
+import common.readFileAsLines
 
 private const val FILENAME = "./src/main/resources/real/day3.txt"
 private const val DOT = '.'

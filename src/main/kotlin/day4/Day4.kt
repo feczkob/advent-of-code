@@ -1,6 +1,6 @@
 package day4
 
-import readFileAsLines
+import common.readFileAsLines
 import kotlin.math.pow
 
 private const val FILENAME = "./src/main/resources/real/day4.txt"

@@ -1,6 +1,6 @@
 package day1
 
-import readFileAsLines
+import common.readFileAsLines
 
 private const val FILENAME = "./src/main/resources/real/day1.txt"
 
