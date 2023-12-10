@@ -9,7 +9,7 @@ fun main() {
     val grid = Grid(text)
 
     // Task 1
-    val numOfSteps = grid.loopSize / 2
+    val numOfSteps = grid.numOfSteps
     println("Number of steps to get the farthest from the starting point: $numOfSteps")
     // 6613
 

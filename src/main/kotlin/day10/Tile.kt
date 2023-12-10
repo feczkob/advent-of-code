@@ -2,13 +2,13 @@ package day10
 
 import common.isOdd
 
-data class Pipe(
+data class Tile(
     val row: Int = 0,
     val col: Int = 0,
     val shape: String = ".",
 ) {
 
-    fun validConnection(other: Pipe): Boolean {
+    fun validConnection(other: Tile): Boolean {
         return when (shape) {
             "|" -> other.shape in listOf("|", "L", "J", "7", "F", "S") && col == other.col
             "-" -> other.shape in listOf("-", "J", "L", "F", "7", "S") && row == other.row

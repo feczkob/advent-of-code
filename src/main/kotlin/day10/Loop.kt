@@ -1,31 +1,31 @@
 package day10
 
 class Loop(
-    initialPipe : Pipe,
+    initialTile : Tile,
 ) {
 
-    val pipes: MutableList<Pipe> = mutableListOf(initialPipe)
+    val tiles: MutableList<Tile> = mutableListOf(initialTile)
 
     val length: Int
-        get() = pipes.size
+        get() = tiles.size
 
-    fun findNextPipe(rows: Array<Array<Pipe>>): Pipe? {
-        val currentPipe = pipes.last()
+    fun findNextPipe(rows: Array<Array<Tile>>): Tile? {
+        val currentTile = tiles.last()
         val candidates = listOfNotNull(
-            rows.getOrNull(currentPipe.row - 1)?.getOrNull(currentPipe.col),
-            rows.getOrNull(currentPipe.row + 1)?.getOrNull(currentPipe.col),
-            rows.getOrNull(currentPipe.row)?.getOrNull(currentPipe.col - 1),
-            rows.getOrNull(currentPipe.row)?.getOrNull(currentPipe.col + 1),
+            rows.getOrNull(currentTile.row - 1)?.getOrNull(currentTile.col),
+            rows.getOrNull(currentTile.row + 1)?.getOrNull(currentTile.col),
+            rows.getOrNull(currentTile.row)?.getOrNull(currentTile.col - 1),
+            rows.getOrNull(currentTile.row)?.getOrNull(currentTile.col + 1),
         )
 
-        return candidates.firstOrNull { it !in pipes && currentPipe.validConnection(it) }
+        return candidates.firstOrNull { it !in tiles && currentTile.validConnection(it) }
     }
 
-    fun addPipe(pipe: Pipe) {
-        pipes.add(pipe)
+    fun addTile(tile: Tile) {
+        tiles.add(tile)
     }
 
-    operator fun get(pred: (Pipe) -> Boolean) = pipes.filter(pred)
-    operator fun contains(pipe: Pipe): Boolean = pipe in pipes
+    operator fun get(pred: (Tile) -> Boolean) = tiles.filter(pred)
+    operator fun contains(tile: Tile): Boolean = tile in tiles
 
 }
